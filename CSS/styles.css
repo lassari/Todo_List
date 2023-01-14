@@ -1,0 +1,163 @@
+/* Geral */
+/* The universal selector (*) selects all HTML elements on the page. */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    color: #333;
+    box-sizing: border-box;  /*to make sure the inputs are not going to be bigger than the parent element border  */
+}
+
+
+body {
+    background-image: url("../img/wallpaper2022.jpg");
+    background-position: center;
+    background-size: cover;  /*cover adapts the image according to the size of the user's screen */
+}
+
+button {
+    background-color: #FDFDFD;
+    color: #102F5e;
+    border: 2px solid #102F5e;
+    padding: .3rem .6rem; /*rem allows you to specify sizes in a way that is relative to the root element*/ 
+    font-size: 1rem;
+    cursor: pointer; /* little hand that indicates a link */
+    display: flex;   /*property that specifies that an element should be displayed as a flex container. Flex containers are elements that are used to create a flexible layout for their child elements. */
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: #102f5e;
+    color: #FFF;
+}
+
+button:hover > i {
+    color: #FFF;
+}
+
+button i {
+    color: #102f5e;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input, 
+select {
+    padding: 0.25rem 0.5rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* ToDo Header */
+.todo-container {
+    max-width: 450px;
+    margin: 3rem auto; 
+    background-color: #FDFDFD;
+    opacity: 0.95;
+    padding: 1.5rem;
+    border-radius: 15px;  /*outer border edge gets round */
+}
+
+.todo-container header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #CCC;
+}
+
+/* Forms */
+#todo-form, #edit-form {
+    padding: 1rem;
+    border-bottom: 1px solid #CCC
+}
+
+#todo-form p,
+#edit-form p{
+    margin-bottom: 0.5rem;  
+    font-weight: bold;  /*add and edit task gets bold*/
+}
+
+.form-control {
+    display: flex;   /*icon and inoput in one line*/
+}
+
+.form-control input {
+    margin-right: .3rem;
+
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+}
+
+/* todo toolbar */
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid #CCC;
+    display:flex;  /*for filter and search to be side by side*/
+}
+
+#toolbar h4{
+    margin-bottom: .5rem;
+}
+
+#search {
+    border-right: 1px solid #DDD;  /*adds line to separate search and filter */
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;  /*search up and input down*/ 
+}
+
+#search form {
+    display: flex; /*this brings the icon to the side of the search field */
+}
+
+#search input {
+    width: 100%;   /*determines the size of the input field*/
+    margin-right: 0.3rem; /*creates space between input field and icon*/
+}
+
+#filter {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter select {
+    flex: 1;   /*this makes the select field extend until the end in the right*/
+} 
+
+/* todo-list*/
+
+.todo {
+    display: flex; /*task and icons side by side*/
+    justify-content: space-around ; /*Flex items are evenly distributed in the line, with half-size spaces on either end.*/
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #DDD; /*a line dividing each one of the ToDos*/
+    transition: .3s;  /*smoothes the animation */ 
+}
+
+.todo h3 {
+    flex: 1; /*to occupy everything possible leaving space only for the 3 buttons*/
+    font-size: .9rem;
+}
+
+.todo button {
+    margin-left: 0.2rem;  /*to add some space between the 3 buttons*/
+}
+
+.done {
+    background-color: #395169;
+}
+
+.done h3 {
+    color: #FFF;
+    text-decoration: line-through; /*a line crossing the word*/
+    
+}
